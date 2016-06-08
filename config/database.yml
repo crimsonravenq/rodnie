@@ -1,29 +1,22 @@
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  
-  
-  
-  pool: 5
-  host: localhost
-  username: ravencrest
-  password: 1
 
-development:
-  <<: *default
-  database: rodnie_development
+
+development: 
+adapter: postgresql
+ host: postgresql0.locum.ru
+  database: olga312_rodnie73
+  username: olga312_rodnie73
+  password: 7ReOLesbm
+  
 
  
-test:
-  <<: *default
-  database: rodnie_test
+
 
 
 production:
-  <<: *default
-  host: localhost
-  database: rodnie_production
-  username: ravencrest
-  password: <%= ENV['RAVENCREST_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  host: postgresql0.locum.ru
+  database: olga312_rodnie73
+  username: olga312_rodnie73
+  password: 7ReOLesbm
 
