@@ -1,0 +1,16 @@
+
+
+    <h2><%= @showcat.catname %></h2>
+
+    <div class="row">
+      <% @showevents.each do |d| %>
+      <div class="col-md-4">
+       
+        <h2 id="abs"><%= d.eventname %></h2>
+        <p id="abs"><%= d.description %></p>
+        <%= link_to "See more", event_path(d) %> 
+      </div>
+      <% end %>
+    </div>
+
+  

@@ -1,0 +1,98 @@
+<div class="container vhcont">
+<div class="row">
+<div class="col-md-9">
+<div class="row">
+<div class="col-md-4 col-md-offset-6">
+<div class="row">
+<div class="col-md-6 col-md-offset-4">
+<%= link_to  root_path do %>
+    <%= image_tag "logologin.png", class: 'img-responsive logologin block-center'%>
+<% end %>
+
+</div>
+     </div>        
+<div class="loginuser">
+
+
+<div class="col-md-12 loginv1">
+
+
+<div class="row">
+ <p class="text-center signin" style="padding-top: 40px;" >зарегестрироваться</p>
+ 
+
+<div class="wrapuserlog">
+
+<div class="col-md-12 " style="padding-bottom: 35px;">
+              <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+
+
+
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field11">
+    
+    <%= f.email_field :email, autofocus: true, :placeholder => "Ваш e-mail",:class => "firstinp form-control" %>
+  </div>
+
+  <div class="field22">
+   
+    <%= f.text_field :realname, autofocus: true, :placeholder => "Ваше имя",:class => "secinp form-control" %>
+  </div>
+
+  <div class="field33">
+    
+    <%= f.text_field :city, autofocus: true, :placeholder => "Ваш город",:class => "thinp form-control" %>
+  </div>
+
+  <div class="field44">
+    
+    <% if @minimum_password_length %>
+   
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", :placeholder => "Ваш пароль",:class => "finp form-control" %>
+  </div>
+
+  <div class="field55">
+    
+    <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Подтверждение пароля",:class => "fifinp form-control" %>
+  </div>
+    <div class="checkbox" style="padding-top: 20px;">
+  <label><input type="checkbox" value="">Принимаю условия пользовательского соглашения</label>
+</div>
+<div class="checkbox" style="padding-bottom: 20px;">
+  <label><input type="checkbox" value="">Получать рассылку на email</label>
+</div>
+  
+    <%= f.submit "Зарегестрироваться",:class => "usersubmit text-center" %>
+  
+<% end %>
+</div>
+</div>
+              </div>
+              
+              
+
+
+              
+
+
+              </div>
+
+              </div>
+              </div>
+              </div>
+            
+              
+              </div>
+              </div>
+              </div>
+              </div>
+</div>
+
+

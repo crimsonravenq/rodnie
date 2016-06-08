@@ -1,0 +1,144 @@
+
+<div class="container vhcont">
+<div class="row">
+
+<div class="col-md-4 col-md-offset-4 ">
+<div class="row">
+<div class="col-md-6 col-md-offset-4">
+<%= link_to  root_path do %>
+    <%= image_tag "logologin.png", class: 'img-responsive logologin block-center'%>
+<% end %>
+
+</div>
+     </div>        
+<div class="loginparams">
+
+
+<div class="col-md-12 loginv1">
+
+<div class="row">
+
+<div class="col-md-12">
+<div class="wrapaboutnav">
+
+<ul class="list-inline text-center " role="tablist">
+
+<li role="presentation" class="active activetab"><a href="#home" class="activea" aria-controls="home" role="tab" data-toggle="tab">как пользователь</a></li>
+<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">как фирма</a></li>
+
+</ul>
+  
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+ <p class="text-center signin" >войти в учетную запись</p>
+ <div class="col-md-6 ">
+   <p class="text-center socials">войти через соц.сети</p>
+   <div class="col-md-11">
+   <div class="row ">
+   <div class="paddingcols">
+   <div class="col-md-4 ">
+   <%=image_tag("vk.png", class:" img-responsive ") %>
+   </div>
+
+   <div class="col-md-4">
+   <%=image_tag("ok.png", class:" img-responsive ") %>
+   </div>
+
+   <div class="col-md-4">
+   <%=image_tag("facebook.png", class:" img-responsive ") %>
+   </div>
+</div>
+   </div>
+   </div>
+ </div>
+
+<div class="tab-content">
+<div role="tabpanel"  id="home" class=" tab-pane active fade in loginrender">
+<div class="col-md-6 loginborder ">
+              <div class="">
+              
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="fieldone loginfield">
+                  <%= f.label :email, 'войти с помощью email',:class => "logolable " %>
+                  <%= f.email_field :email, autofocus: true, :placeholder => "Ваш e-mail",:class => "form-control" %>
+                </div>
+
+                <div class="field2 loginfield">
+                  
+                  <%= f.password_field :password, autocomplete: "off", :placeholder => "Ваш пароль",:class => "form-control" %>
+                </div>
+
+                <% if devise_mapping.rememberable? -%>
+                 
+                <% end -%>
+
+                <div class="actions ">
+                  <%= f.submit "ВОЙТИ", class: "btn btn-submit mybt " %>
+                </div>
+
+              <% end %>
+              </div>
+              </div>
+              
+              </div>
+
+
+              <div role="tabpanel"  id="profile" class="loginrender tab-pane  fade ">
+<div class="col-md-6 loginborder ">
+<%= render 'organizations/sessions/new' %>
+
+</div>
+</div>
+
+
+              </div>
+
+              </div>
+              </div>
+              </div>
+              <div class="col-md-12">
+              <div class="row reglinks">
+              <p class="text-center signin">зарегестрироваться</p>
+              <div class="">
+              <div class="col-md-6 paddingbot">
+              <div class="">
+
+              <%= link_to  new_organization_registration_path do %>
+    <%= image_tag "logocomp.png", class: 'img-responsive complogocont rightimg'%>
+<% end %>
+            <%= link_to 'регистрация фирмы',  new_organization_registration_path, class: 'linkdec pull-right pright'  %>
+              
+
+              
+              </div>
+              </div>
+
+              <div class="col-md-6 loginborder">
+              <div class="">
+              
+              
+
+              <%= render "users/shared/links" %>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              
+              </div>
+              </div>
+</div>

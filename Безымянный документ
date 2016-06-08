@@ -1,0 +1,86 @@
+city
+has_many :events
+has_many :categories through: :events
+
+category
+has_many :events
+has_many :ages through: :events
+
+event 
+belongs_to :category
+belongs_to :ages
+belongs_to :organization
+
+age
+has_many :events
+has_many :categories: :through events 
+
+user
+has_many :comments
+
+
+
+
+comments
+belongs_to :user
+belongs_to :event
+
+
+organization
+has_many :events
+
+
+
+
+
+
+
+
+
+events migration
+t.string :eventname
+t.text :description
+t.string :date
+t.string :img
+t.integer :price
+t.string :place
+
+ages migration
+t.string :interval
+
+cities migration
+t.string :cityname
+
+organization
+t.string :name
+t.string :email
+t.string :orgadress
+t.string :phone
+t.srting :password
+t.string :photo
+t.string :service
+t.string :type
+t.string :site
+
+
+user
+t.string :nikname
+t.string :username
+t.string :email
+t.string :useradress
+t.string :password
+t.string :usercity
+t.string :userphoto
+
+post
+t.string :photo
+t.string  :postname
+t. string :description
+
+comment
+t.text :message
+
+new user model
+
+t.string :role
+

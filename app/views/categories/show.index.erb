@@ -1,0 +1,15 @@
+<div class="container">
+    <h2><%= @showcat.catname %></h2>
+
+    <div class="cards row">
+      <% @showevents.each do |d| %>
+      <div class="card col-xs-4">
+       
+        <h2 id="abs"><%= d.eventname %></h2>
+        <p id="abs"><%= d.description %></p>
+        <%= link_to "See more", event_path(d) %> 
+      </div>
+      <% end %>
+    </div>
+
+  </div>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+          <title>about</title>
+          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+        </head>
+        <body>
+          <div class="header">
+ <div class='navbar navbar-default navbar-static-top'>
+      <div class='container'>
+      <div class="row">
+      <div class="col-md-12 menuone ">
+      
+        <ul class='nav navbar-nav '>
+        <li><%= link_to "ГЛАВНАЯ", root_path%></li>
+          
+          <li class="navy">-</li>
+          <li ><a href='#'>О ПРОЕКТЕ</a></li>
+          <li class="navy">-</li>
+          <li ><a href='#'>ЭТО ИНТЕРЕСНО</a></li>
+          <li class="navy">-</li>
+          <li ><a href='#'>НОВОСТИ</a></li>
+
+          <li class="active navbold"><a href='#'>КАТАЛОГ ОРГАНИЗАЦИЙ</a></li>
+
+          <% if user_signed_in? %>
+    <li class="naventer"><%= link_to "Личный кабинет", '/profile/edit' %></li>
+    <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+<% else %>
+    <li class="naventer"><%= link_to "Вход/Регистрация", new_user_session_path %> </li>
+<% end %>
+
+
+
+
+         
+          <li><a style="font-weight: 400 !important;" href='#'><img class="logo2"  src='logo2.png'/>Сотрудничество</a></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="jumbotron ">
+<div class="overlay">
+          <div class='container  '>
+          <div class="row item  " >
+          <div class="col-md-2 " >
+          <%=image_tag("logo.png", class:"logo img-responsive") %>
+          
+
+
+          <div class="dropdown text-center" style="font-family: 'Open Sans'; font-size: 1em; font-style: italic; font-weight: 600;">
+          
+  <span >Ваш город: </span><a href="#"  class="dropdown-toggle dot"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Химки<span class="caret"></span></a>
+    
+    
+  
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <% @city.each do |f| %>
+       
+      
+      
+    <li><a href="#"><%=f.cityname%></a></li>
+    <%end%>
+    
+    
+  </ul>
+</div>
+
+
+
+
+          </div>
+          <div class="col-md-8 text-center ">
+          <h2 style="font-size: 3em; padding-top: 20px;">Детская афиша</h2>
+          </div>
+          <div class="col-md-2">
+
+
+      <div class="borederdate text-center ">
+      <div class="borderdottet">
+      <p style="font-family: 'PT Sans Narrow'; font-size: 4em; font-weight:700 ; line-height: 0.6em;">4</p>
+      <p style="font-family: 'PT Sans Narrow'; line-height: 0.6em;">марта</p>
+      <p style="font-family: 'PT Sans Narrow'; line-height: 0.6em;">2016</p>
+      </div>
+      </div>
+
+
+          </div>
+          
+          </div>
+          </div>
+        </div>
+        </div>
+         <div class='navbar navbar-default low  '>
+
+      <div class='container'>
+
+      <div class="row">
+      
+     <div class="col-md-12">
+        
+        
+          
+        <ul class='nav navbar-nav lower '>
+        
+        <% @nav.each do |m| %> 
+        
+        
+          <li ><a href='#'><%= link_to m.catname,  category_path(m),:class =>"basecat" %></a></li>
+       <li class="navylow">-</li>
+          
+          
+         
+          <% end %>
+          <li><a href='/'>ЕЩЕ  <i class="fa fa-angle-right navarrow" aria-hidden="true"></i>
+</a></li>
+          <li class="m"><a href='/' >ПОПУЛЯРНЫЕ</a></li>
+          <li class=" scaryday"><a href='/' style="color: #F57F17 !important;">ДЕНЬ ЗАЩИТЫ ДЕТЕЙ</a></li>
+        </ul>
+          </div>
+        </div> 
+      </div>
+      </div>
+        <div class="main">
+            <%= yield %>
+            </div>
+
+
+
+
+            <div class="footer ">
+  <div class="container ">
+  <div class="row " style="padding-top: 50px;">
+  <div class="col-md-5">
+  <div class=" row">
+  <div class="col-md-4 list1">
+        
+    <ul class=" list-unstyled">
+      <li><img src='blue.png' class="img-responcive"></li>
+      <li><a href='/'>ГЛАВНАЯ</a></li>             
+      <li><a href='/'>О ПРОЕКТЕ</a></li>
+      <li><a href='/'>ЭТО ИНТЕРЕСНО</a></li>
+      <li><a href='/'>НОВОСТИ</a></li>
+      <li><a href='/'>КАТАЛОГ ОРГАНИЗАЦИЙ</a></li>
+
+
+    </ul>
+    </div>
+
+    <div class="col-md-5 col-md-offset-2 list2">
+    <ul class="list-unstyled">
+     <li><img src='ora.png' class="img-responcive"></li>
+      <li><a href='/'>Праздники</a></li>             
+      <li><a href='/'>Театр</a></li>
+      <li><a href='/'>Кино</a></li>
+      <li><a href='/'>Выставки</a></li>
+      <li><a href='/'>Экскурсии</a></li>
+      <li><a href='/'>Спорт</a></li>
+      <li><a href='/'>Обучение</a></li>
+      <li><a href='/'>Бесплатно</a></li>
+
+
+    </ul>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-7">
+    <div class="col-md-5 list3">
+    <p class="minus1"><img src='blue.png' class="img-responcive">Это интересно</p>
+     <ul class="list-unstyled">
+      <li><a href='/'>Места, которые можно посетить с детьми</a></li>             
+      <li><a href='/'>Обзор самых интересных детских образовательных клубов</a></li>
+      <li><a href='/'>Самые лучшие детские лагеря</a></li>
+      <li><a href='/'>"Поиграем" - игры и игрушки для детей всех возрастов</a></li>
+      <li><a href='/'>Как увидеть одаренного ребенка?</a></li>
+
+
+    </ul>
+      
+    </div>
+    <div class="col-md-5 col-md-offset-1 list3">
+    <p class="minus2"><img src='ora.png' class="img-responcive">Новости</p>
+     <ul class="list-unstyled">
+      <li><a href='/'>Места, которые можно посетить с детьми</a></li>             
+      <li><a href='/'>Обзор самых интересных детских образовательных клубов</a></li>
+      <li><a href='/'>Самые лучшие детские лагеря</a></li>
+      <li><a href='/'>"Поиграем" - игры и игрушки для детей всех возрастов</a></li>
+      <li><a href='/'>Как увидеть одаренного ребенка?</a></li>
+
+
+    </ul>
+
+    </div>
+    </div>
+    </div>
+    <div class="row list4">
+    <div class="col-md-12">
+    <ul class="list-inline">
+      <li style="border:0;"><a href='/'>Сотрудничество</a></li>
+      <li class="l4l"><a href='/'>Правила размещения</a></li>    
+      <li class="l4l"><a href='/'>Защита персональных данных</a></li>    
+      <li class="l4l"><a href='/'>Публичная оферта</a></li>        
+    </ul>
+    </div>
+    </div>
+
+    <div class="row" style="padding-top: 50px;">
+    <div class="col-md-6">
+    <div class='row'>
+    <div class="col-md-5">
+    <p>Контактный телефон</p>
+    <p style="color: #04B4D3; font-weight: 700; font-size: 26px;">8(926)572-96-23</p>
+    </div>
+    <div class="col-md-5">
+    <p>Электронная почта</p>
+    <p style="color:#F7B211; font-weight: 700; font-size: 24px; ">rodnie.info@mail.ru </p>
+    </div>
+
+    </div>
+  </div>
+  <div class="col-md-6">
+  <p>Наши группы в контакте:</p>
+  <div class="row vkrow">
+  <div class="col-md-3">
+  <ul class="list-unstyled">
+    
+    <li><img src='v6.png' class="img-responcive"><a href="#">г. Химки</a></li>
+    <li><img src='v1.png' class="img-responcive"><a href="#">г. Щелково</a></li>
+    
+
+  </ul>
+</div>
+<div class="col-md-3">
+   <ul class="list-unstyled">
+    
+    <li><img src='v51.png' class="img-responcive"><a href="#">г. Мытищи</a></li>
+    <li><img src='v53.png' class="img-responcive"><a href="#">г. Одинцово</a></li>
+    
+
+  </ul>
+  </div>
+<div class="col-md-3">
+   <ul class="list-unstyled">
+    
+    <li><img src='v52.png' class="img-responcive"><a href="#">г. Балашиха</a></li>
+    <li><img src='v51.png' class="img-responcive"><a href="#">г. Подольск</a></li>
+    
+
+  </ul>
+  </div>
+  
+  </div>
+  </div>
+</div>
+
+<div class="row " style="font-size: 0.9em; padding-top: 40px;">
+<div class="col-md-12">
+<p>&copy 2016 Rodnie.ru - сервис по продвижению событий.</p>
+<p>Права на текстовые и другие материалы, размещенные на сайте, охраняются законом. При цитировании обязательна ссылка на Rodnie.ru</p>
+</div>
+</div> 
+</div>
+</div>
+
+        </body>
+    </html>

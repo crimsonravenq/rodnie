@@ -1,0 +1,29 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  
+  
+  
+  pool: 5
+  host: localhost
+  username: ravencrest
+  password: 1
+
+development:
+  <<: *default
+  database: rodnie_development
+
+ 
+test:
+  <<: *default
+  database: rodnie_test
+
+
+production:
+  <<: *default
+  host: localhost
+  database: rodnie_production
+  username: ravencrest
+  password: <%= ENV['RAVENCREST_DATABASE_PASSWORD'] %>
+

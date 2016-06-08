@@ -1,0 +1,39 @@
+			
+			
+			
+      
+      <div class="grid">
+      				<%@events.each do |f| %>
+
+      <div class="eventcolor grid-item panel panel-default">
+      <img src="free.png" class="img-responcive" style="position: absolute; padding-left: 4em; margin-top: -8px; z-index: 1;">
+      
+      <div style="position: relative;">
+      
+      <%= image_tag f.avatar, class:"img-responcive img1" %>
+      
+      <span class="age6"><p>3+</p></span>
+      </div>
+      <div class="eventdesc panel-body">
+      <p class="eventheader"><%=f.eventname %></p>
+      <p class="eventpara" ><%=f.description %></p>
+      <div class="row">
+      
+       <div class="col-md-12">
+      <p class="datap"><img src='calendari.png' class="img-responcive cli">
+      <%=f.date %><span style="width: 1em; display: inline-block;"></span><span style="width: 6.3em; display: inline-block;"></span><span class="heart"><i class="fa fa-heart" aria-hidden="true"></i>
+      33</span></p>
+      </div>
+      
+      
+      
+      
+      
+      </div>
+      </div>
+      </div> 
+					<%end%>
+      </div>
+			
+
+			
